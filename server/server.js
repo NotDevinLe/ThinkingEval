@@ -7,8 +7,8 @@ const server = http.createServer((req, res) => {
   res.end('Hello, world!\n'); // Response body
 });
 
-// Listen on port 3000
-const PORT = 3000;
+// Listen on port 8080
+const PORT = 8080;
 server.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
