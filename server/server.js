@@ -1,14 +1,17 @@
-// server.js
-const http = require('http');
+const express = require('express');
+const path = require('path');
 
-// Create server
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' }); // HTTP status 200 + content type
-  res.end('Hello, world!\n'); // Response body
+const app = express();
+
+// Use static files from the project root (go one level up)
+app.use(express.static(path.join(__dirname, '..')));
+
+// Serve the HTML file from the root
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
-// Listen on port 8080
 const PORT = 8080;
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
