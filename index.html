@@ -31,5 +31,33 @@
         <div class="leaderboard-entry">5. LLAMA-2</div>
         <div class="leaderboard-entry">6. GPT-4</div>
       </div>
+
+      <script>
+        // Example array of messages
+        const messages = [
+          "Model loaded successfully.",
+          "Evaluating first puzzle...",
+          "Prediction: The answer is 42.",
+          "Confidence: 98.5%",
+          "Evaluation complete."
+        ];
+      
+        // Select the elements
+        const evaluateButton = document.querySelector(".submit");
+        const chatbox = document.querySelector(".chatbox");
+      
+        evaluateButton.addEventListener("click", () => {
+          // Clear previous content (optional)
+          chatbox.innerHTML = "";
+      
+          // Add each message as a new div or paragraph
+          messages.forEach(message => {
+            const msgElem = document.createElement("p");
+            msgElem.textContent = message;
+            chatbox.appendChild(msgElem);
+          });
+        });
+      </script>
+      
 </body>
 </html>
